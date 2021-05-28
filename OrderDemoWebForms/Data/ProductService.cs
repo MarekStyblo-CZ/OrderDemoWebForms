@@ -1,4 +1,5 @@
 ﻿using OrderDemoWebForms.Data.Repository;
+using OrderDemoWebForms.Model;
 using OrderDemoWebForms.Model.DbSets;
 using System.Collections.Generic;
 
@@ -7,6 +8,11 @@ namespace OrderDemoWebForms.Data
     public class ProductService
     {
         private ProductRepository _productRepository = new ProductRepository();
+
+        public Product Get(int id)
+        {
+            return _productRepository.Get(id);
+        }
 
         public List<Product> GetProducts()
         {
@@ -23,9 +29,9 @@ namespace OrderDemoWebForms.Data
             _productRepository.Remove(product);
         }
 
-        public void Edit(Product product)
+        public void Update(Product product)
         {
-            _productRepository.Edit(product);
+            _productRepository.Update(product);
         }
     }
 }

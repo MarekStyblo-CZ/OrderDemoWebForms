@@ -37,20 +37,14 @@ namespace OrderDemoWebForms.Pages.Product
 
         protected void ProductsGridView_RowUpdating(Object sender, GridViewUpdateEventArgs e)
         {
-            //_productService.Edit(((List<Product>)ProductsGrid.DataSource)[e.NewEditIndex]);
-            //BindData();
-
-
-            Response.Redirect("ProductUpdate.aspx");
-
+            var product = ((List<Model.DbSets.Product>)ProductsGrid.DataSource)[e.RowIndex];
+            Response.Redirect($"ProductUpdate.aspx?Id={product.Id}");
         }
 
         protected void ProductsGridView_RowEditing(Object sender, GridViewEditEventArgs e)
         {
-            //_productService.Edit(((List<Product>)ProductsGrid.DataSource)[e.NewEditIndex]);
-            //BindData();
-            Response.Redirect("ProductUpdate.aspx");
-
+            var product = ((List<Model.DbSets.Product>)ProductsGrid.DataSource)[e.NewEditIndex];
+            Response.Redirect($"ProductUpdate.aspx?Id={product.Id}");
         }
 
 

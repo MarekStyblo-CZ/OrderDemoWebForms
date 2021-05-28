@@ -9,6 +9,11 @@ namespace OrderDemoWebForms.Data.Repository
     {
         private SqlDbContext _db = new SqlDbContext();
 
+        public Product Get(int id)
+        {
+            return _db.Products.FirstOrDefault(p => p.Id == id);
+        }
+
         public List<Product> GetAll()
         {
             return _db.Products.ToList();
@@ -34,7 +39,7 @@ namespace OrderDemoWebForms.Data.Repository
             _db.SaveChanges();
         }
 
-        public void Edit(Product product)
+        public void Update(Product product)
         {
             var actualProduct = _db.Products.FirstOrDefault(p => p.Id == product.Id);
 
