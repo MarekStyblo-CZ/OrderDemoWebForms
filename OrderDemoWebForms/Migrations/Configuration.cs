@@ -1,6 +1,6 @@
 ﻿namespace OrderDemoWebForms.Migrations
 {
-    using OrderDemoWebForms.Model.DbSet;
+    using OrderDemoWebForms.Model.DbSets;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;

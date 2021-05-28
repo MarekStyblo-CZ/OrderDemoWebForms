@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace OrderDemoWebForms
+namespace OrderDemoWebForms.Pages.Order
 {
     public partial class Orders : Page
     {

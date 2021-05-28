@@ -113,8 +113,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Products.aspx" />
-    <Content Include="Orders.aspx" />
+    <Content Include="Pages\Product\ProductUpdate.aspx" />
+    <Content Include="Pages\Product\Products.aspx" />
+    <Content Include="Pages\Order\Orders.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -178,20 +179,27 @@
       <DependentUpon>202105280830038_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\DbSet\Product.cs" />
-    <Compile Include="Products.aspx.cs">
+    <Compile Include="Model\DbSets\Product.cs" />
+    <Compile Include="Pages\Product\ProductUpdate.aspx.cs">
+      <DependentUpon>ProductUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Product\ProductUpdate.aspx.designer.cs">
+      <DependentUpon>ProductUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Product\Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Products.aspx.designer.cs">
+    <Compile Include="Pages\Product\Products.aspx.designer.cs">
       <DependentUpon>Products.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Orders.aspx.cs">
+    <Compile Include="Pages\Order\Orders.aspx.cs">
       <DependentUpon>Orders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Orders.aspx.designer.cs">
+    <Compile Include="Pages\Order\Orders.aspx.designer.cs">
       <DependentUpon>Orders.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">

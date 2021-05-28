@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OrderDemoWebForms.Model.DbSet
+namespace OrderDemoWebForms.Model.DbSets
 {
     public class Product
     {

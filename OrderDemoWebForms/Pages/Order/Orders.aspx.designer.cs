@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OrderDemoWebForms
+namespace OrderDemoWebForms.Pages.Order
 {
 
 
