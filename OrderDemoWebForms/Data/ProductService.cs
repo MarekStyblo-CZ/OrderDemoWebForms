@@ -1,5 +1,5 @@
 ﻿using OrderDemoWebForms.Data.Repository;
-using OrderDemoWebForms.Model.DbSet;
+using OrderDemoWebForms.Model.DbSets;
 using System.Collections.Generic;
 
 namespace OrderDemoWebForms.Data
@@ -21,6 +21,11 @@ namespace OrderDemoWebForms.Data
         public void Delete(Product product)
         {
             _productRepository.Remove(product);
+        }
+
+        public void Edit(Product product)
+        {
+            _productRepository.Edit(product);
         }
     }
 }

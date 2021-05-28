@@ -1,4 +1,4 @@
-﻿using OrderDemoWebForms.Model.DbSet;
+﻿using OrderDemoWebForms.Model.DbSets;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -33,5 +33,17 @@ namespace OrderDemoWebForms.Data.Repository
             _db.Products.Remove(product);
             _db.SaveChanges();
         }
+
+        public void Edit(Product product)
+        {
+            var actualProduct = _db.Products.FirstOrDefault(p => p.Id == product.Id);
+
+            actualProduct.Name = product.Name;
+            actualProduct.Code = product.Code;
+            actualProduct.Price = product.Price;
+
+            _db.SaveChanges();
+        }
+
     }
 }
