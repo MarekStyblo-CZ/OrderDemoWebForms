@@ -3,6 +3,8 @@ using OrderDemoWebForms.Model.DbSet;
 using System;
 using System.Web.UI;
 using System.Linq;
+using System.Web.UI.WebControls;
+using System.Collections.Generic;
 
 namespace OrderDemoWebForms
 {
@@ -22,9 +24,16 @@ namespace OrderDemoWebForms
 
         protected void AddProduct_Click(object sender, EventArgs e)
         {
-            _productService.AddProduct(new Product { Code = Int32.Parse(txtCode.Text), Name = txtName.Text, Price = float.Parse(txtPrice.Text) });
+            _productService.Add(new Product { Code = Int32.Parse(txtCode.Text), Name = txtName.Text, Price = float.Parse(txtPrice.Text) });
             BindData();
         }
+
+        protected void ProductsGridView_RowDeleting(Object sender, GridViewDeleteEventArgs e)
+        {
+            _productService.Delete(((List<Product>)ProductsGrid.DataSource)[e.RowIndex]);
+            BindData();
+        }
+
 
         protected void BindData()
         {

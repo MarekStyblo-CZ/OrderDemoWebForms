@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace OrderDemoWebForms.Data.Repository
 {
+    //#todo add Dispose()
     public class ProductRepository
     {
         private SqlDbContext _db = new SqlDbContext();
@@ -27,5 +28,10 @@ namespace OrderDemoWebForms.Data.Repository
             _db.SaveChanges();
         }
 
+        public void Remove(Product product)
+        {
+            _db.Products.Remove(product);
+            _db.SaveChanges();
+        }
     }
 }

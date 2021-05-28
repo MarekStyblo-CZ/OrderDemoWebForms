@@ -13,10 +13,14 @@ namespace OrderDemoWebForms.Data
             return _productRepository.GetAll();
         }
 
-        public void AddProduct(Product product)
+        public void Add(Product product)
         {
             _productRepository.Add(product);
         }
 
+        public void Delete(Product product)
+        {
+            _productRepository.Remove(product);
+        }
     }
 }
