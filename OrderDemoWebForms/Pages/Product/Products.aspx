@@ -11,21 +11,26 @@
         <h3>Přidat produkt</h3>
         <table class="nav-justified">
             <tr>
-                <td>Kód produktu</td>
-                <td>
+                <td style="height: 25px">Kód produktu</td>
+                <td style="height: 25px">
                     <asp:TextBox ID="txtCode" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCode" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300">Je třeba zadat kód produktu</asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="CompareValidator4" runat="server" ControlToValidate="txtCode" ErrorMessage="CompareValidator" ForeColor="#FF3300" Operator="DataTypeCheck" Type="Integer">Kód může obsahovat pouze čísla</asp:CompareValidator>
                 </td>
             </tr>
             <tr>
-                <td>Název produktu</td>
-                <td>
+                <td style="height: 25px">Název produktu</td>
+                <td style="height: 25px">
                     <asp:TextBox ID="txtName" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtName" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300">Je třeba zadat název produktu</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td>Cena</td>
                 <td>
                     <asp:TextBox ID="txtPrice" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtPrice" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300">Je třeba zadat cenu</asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="CompareValidator5" runat="server" ControlToValidate="txtPrice" ErrorMessage="CompareValidator" ForeColor="#FF3300" Operator="DataTypeCheck" Type="Double">Cena může obsahovat pouze desetinné číslo</asp:CompareValidator>
                 </td>
             </tr>
         </table>

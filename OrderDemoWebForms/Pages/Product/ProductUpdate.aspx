@@ -18,18 +18,23 @@
                 <td>Kód produktu</td>
                 <td>
                     <asp:TextBox ID="txtCode" runat="server" Text='<%# Product.Code %>' />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCode" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300">Je třeba zadat kód produktu</asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="CompareValidator4" runat="server" ControlToValidate="txtCode" ErrorMessage="CompareValidator" ForeColor="#FF3300" Operator="DataTypeCheck" Type="Integer">Kód může obsahovat pouze čísla</asp:CompareValidator>
                 </td>
             </tr>
             <tr>
                 <td>Název produktu</td>
                 <td>
                     <asp:TextBox ID="txtName" runat="server" Text='<%# Product.Name %>' />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtName" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300">Je třeba zadat název produktu</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td>Cena</td>
                 <td>
                     <asp:TextBox ID="txtPrice" runat="server" Text='<%# Product.Price %>' />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtPrice" ErrorMessage="RequiredFieldValidator" ForeColor="#FF3300">Je třeba zadat cenu</asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="CompareValidator5" runat="server" ControlToValidate="txtPrice" ErrorMessage="CompareValidator" ForeColor="#FF3300" Operator="DataTypeCheck" Type="Double">Cena může obsahovat pouze desetinné číslo</asp:CompareValidator>
                 </td>
             </tr>
         </table>
