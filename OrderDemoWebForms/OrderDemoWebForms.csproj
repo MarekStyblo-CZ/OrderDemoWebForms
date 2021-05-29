@@ -171,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Data\Repository\OrderRepository.cs" />
     <Compile Include="Data\Repository\ProductRepository.cs" />
     <Compile Include="Data\SqlDbContext.cs" />
     <Compile Include="Migrations\202105280830038_Init.cs" />
@@ -185,6 +186,7 @@
     <Compile Include="Model\DbSets\Order.cs" />
     <Compile Include="Model\DbSets\OrderItem.cs" />
     <Compile Include="Model\DbSets\Product.cs" />
+    <Compile Include="Model\ViewModels\OrdersOverviewVM.cs" />
     <Compile Include="Pages\Product\ProductUpdate.aspx.cs">
       <DependentUpon>ProductUpdate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -218,6 +220,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

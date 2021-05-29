@@ -5,8 +5,6 @@
     <div>
         <h2><%: Title %></h2>
 
-
-
         <hr />
         <h3>Přidat produkt</h3>
         <table class="nav-justified">

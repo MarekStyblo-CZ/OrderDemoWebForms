@@ -23,7 +23,7 @@ namespace OrderDemoWebForms.Data
 
             //1:N
             modelBuilder.Entity<Order>()
-                .HasMany<OrderItem>(o => o.OderItems)
+                .HasMany<OrderItem>(o => o.OrderItems)
                 .WithRequired(oi => oi.Order)
                 .HasForeignKey(oi => oi.OrderId)
                 .WillCascadeOnDelete(true);

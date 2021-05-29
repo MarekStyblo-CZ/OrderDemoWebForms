@@ -14,7 +14,7 @@ namespace OrderDemoWebForms.Model.DbSets
         public int Id { get; set; }
 
         //Relations
-        public List<OrderItem> OderItems { get; set; }
+        public List<OrderItem> OrderItems { get; set; }
 
         //Attr
         [Required]
