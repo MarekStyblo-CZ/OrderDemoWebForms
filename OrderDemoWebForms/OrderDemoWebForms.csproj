@@ -171,14 +171,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="Data\ProductService.cs" />
     <Compile Include="Data\Repository\ProductRepository.cs" />
     <Compile Include="Data\SqlDbContext.cs" />
     <Compile Include="Migrations\202105280830038_Init.cs" />
     <Compile Include="Migrations\202105280830038_Init.designer.cs">
       <DependentUpon>202105280830038_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105290746131_OrderWithOrderItems.cs" />
+    <Compile Include="Migrations\202105290746131_OrderWithOrderItems.designer.cs">
+      <DependentUpon>202105290746131_OrderWithOrderItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\DbSets\Order.cs" />
+    <Compile Include="Model\DbSets\OrderItem.cs" />
     <Compile Include="Model\DbSets\Product.cs" />
     <Compile Include="Pages\Product\ProductUpdate.aspx.cs">
       <DependentUpon>ProductUpdate.aspx</DependentUpon>
@@ -213,6 +218,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ProductService.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -252,6 +258,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105280830038_Init.resx">
       <DependentUpon>202105280830038_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105290746131_OrderWithOrderItems.resx">
+      <DependentUpon>202105290746131_OrderWithOrderItems.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,9 +1,11 @@
 ﻿using OrderDemoWebForms.Data.Repository;
-using OrderDemoWebForms.Model;
 using OrderDemoWebForms.Model.DbSets;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-namespace OrderDemoWebForms.Data
+namespace OrderDemoWebForms.Services
 {
     public class ProductService
     {

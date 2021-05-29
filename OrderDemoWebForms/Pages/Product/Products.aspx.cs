@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web.UI.WebControls;
 using System.Collections.Generic;
 using System.Data.Entity;
+using OrderDemoWebForms.Services;
 
 namespace OrderDemoWebForms.Pages.Product
 {
@@ -30,7 +31,7 @@ namespace OrderDemoWebForms.Pages.Product
         }
 
         protected void ProductsGridView_RowDeleting(Object sender, GridViewDeleteEventArgs e)
-        {            
+        {
             _productService.Delete(((List<Model.DbSets.Product>)ProductsGrid.DataSource)[e.RowIndex]);
             BindData();
         }

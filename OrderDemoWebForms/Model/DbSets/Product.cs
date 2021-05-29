@@ -14,7 +14,6 @@ namespace OrderDemoWebForms.Model.DbSets
         public List<OrderItem> OrderItems { get; set; }
 
         //Attr
-
         public int Code { get; set; }
         [Required]
         public string Name { get; set; }
