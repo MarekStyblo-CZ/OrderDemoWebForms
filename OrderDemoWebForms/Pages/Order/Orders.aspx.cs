@@ -1,4 +1,5 @@
-﻿using OrderDemoWebForms.Services;
+﻿using OrderDemoWebForms.Model.ViewModels;
+using OrderDemoWebForms.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,11 +26,8 @@ namespace OrderDemoWebForms.Pages.Order
 
         protected void OrdersGridView_RowDeleting(Object sender, GridViewDeleteEventArgs e)
         {
-            //var errMsg = _productService.Delete(((List<Model.DbSets.Product>)ProductsGrid.DataSource)[e.RowIndex]);
-            //if (string.IsNullOrEmpty(errMsg))
-            //    BindData();
-            //else
-            //    Response.Write(errMsg);
+            _orderService.Delete(((List<OrdersOverviewVM>)OrdersGrid.DataSource)[e.RowIndex]);
+            BindData();
         }
 
         protected void OrdersGridView_RowUpdating(Object sender, GridViewUpdateEventArgs e)

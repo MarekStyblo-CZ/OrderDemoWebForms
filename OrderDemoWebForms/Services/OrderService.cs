@@ -24,7 +24,7 @@ namespace OrderDemoWebForms.Services
 
         public List<Order> GetAllWithOrderItems()
         {
-            return _orderRepository.GetAll();
+            return _orderRepository.GetAllWithOrderItems();
         }
 
 
@@ -54,23 +54,9 @@ namespace OrderDemoWebForms.Services
             _orderRepository.Add(order);
         }
 
-        //#todo - nice to have -- better aler msg..
-        /// <summary>
-        /// Deletes product with check for OrderItem existence
-        /// </summary>
-        /// <param name="product"></param>
-        /// <returns>Returns error msg in case of error / empty string when all ok</returns>
-        public string Delete(Order order)
+        public void Delete(OrdersOverviewVM orderVM)
         {
-            throw new NotImplementedException();
-            //var productWithOrderItems = _orderRepository.GetWithOrderItems(product.Id);
-            //if (productWithOrderItems.OrderItems.Count() > 0)
-            //    return "<script>alert(\"Produkt nelze smazat. Existuje záznam v objednávkách\")</script>";
-            //else
-            //{
-            //    _orderRepository.Remove(product);
-            //    return string.Empty;
-            //}
+            _orderRepository.Remove(_orderRepository.Get(orderVM.Id));
         }
 
         public void Update(Order order)
