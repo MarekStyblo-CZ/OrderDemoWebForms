@@ -32,8 +32,11 @@ namespace OrderDemoWebForms.Pages.Product
 
         protected void ProductsGridView_RowDeleting(Object sender, GridViewDeleteEventArgs e)
         {
-            _productService.Delete(((List<Model.DbSets.Product>)ProductsGrid.DataSource)[e.RowIndex]);
-            BindData();
+            var errMsg = _productService.Delete(((List<Model.DbSets.Product>)ProductsGrid.DataSource)[e.RowIndex]);
+            if (string.IsNullOrEmpty(errMsg))
+                BindData();
+            else
+                Response.Write(errMsg);
         }
 
         protected void ProductsGridView_RowUpdating(Object sender, GridViewUpdateEventArgs e)

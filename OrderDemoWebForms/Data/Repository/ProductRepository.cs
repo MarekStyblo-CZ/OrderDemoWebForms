@@ -14,6 +14,11 @@ namespace OrderDemoWebForms.Data.Repository
             return _db.Products.FirstOrDefault(p => p.Id == id);
         }
 
+        public Product GetWithOrderItems(int id)
+        {
+            return _db.Products.Include("OrderItems").FirstOrDefault(p => p.Id == id);
+        }
+
         public List<Product> GetAll()
         {
             return _db.Products.ToList();

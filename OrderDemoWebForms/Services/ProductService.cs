@@ -26,9 +26,22 @@ namespace OrderDemoWebForms.Services
             _productRepository.Add(product);
         }
 
-        public void Delete(Product product)
+        //#todo - nice to have -- better aler msg..
+        /// <summary>
+        /// Deletes product with check for OrderItem existence
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns>Returns error msg in case of error / empty string when all ok</returns>
+        public string Delete(Product product)
         {
-            _productRepository.Remove(product);
+            var productWithOrderItems = _productRepository.GetWithOrderItems(product.Id);
+            if (productWithOrderItems.OrderItems.Count() > 0)
+                return "<script>alert(\"Produkt nelze smazat. Existuje záznam v objednávkách\")</script>";
+            else
+            {
+                _productRepository.Remove(product);
+                return string.Empty;
+            }
         }
 
         public void Update(Product product)
