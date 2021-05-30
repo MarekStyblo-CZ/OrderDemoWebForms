@@ -10,34 +10,69 @@
         <h3>Detail objednávky</h3>
         <table class="nav-justified">
             <tr>
-                <td>Id objednávky</td>
-                <td>
-                    <asp:TextBox ID="txtCreateId" runat="server" ReadOnly="true" disabled="disabled" />
-                </td>
-            </tr>
-            <tr>
                 <td>Jméno zákazníka</td>
                 <td>
-                    <asp:TextBox ID="txtCreateCustomerName" runat="server" ReadOnly="true" disabled="disabled" />
+                    <asp:TextBox ID="txtCreateCustomerName" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtCreateCustomerName" ErrorMessage="Je třeba zadat jméno" ForeColor="#FF0066"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td>Adresa zákazníka</td>
                 <td>
-                    <asp:TextBox ID="txtCreateCustomerAddress" runat="server" ReadOnly="true" disabled="disabled" />
+                    <asp:TextBox ID="txtCreateCustomerAddress" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtCreateCustomerAddress" ErrorMessage="Je třeba zadat adresu" ForeColor="#FF0066"></asp:RequiredFieldValidator>
                 </td>
             </tr>
-            <tr>
-                <td>Cena</td>
-                <td>
-                    <asp:TextBox ID="txtCreatePrice" runat="server" ReadOnly="true" disabled="disabled" />
-                </td>
-            </tr>
+
         </table>
         <br />
-        <asp:Button ID="Back" runat="server" OnClick="Back_Click" Text="Zpět" />
-        <%--<asp:Button ID="UpdateProducId" runat="server" OnClick="UpdateProduct_Click" Text="Aktualizovat" />--%>
+        <br />
+
+        <hr />
+        <table class="nav-justified">
+            <tr>
+                <th>Produkt</th>
+                <th>Množství</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <asp:DropDownList ID="ProductsDropDownList1" runat="server"></asp:DropDownList>
+                </td>
+                <td>
+                    <asp:TextBox ID="Quantity1" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="Quantity1" ErrorMessage="Je třeba vyplnit" ForeColor="#FF0066"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <asp:DropDownList ID="ProductsDropDownList2" runat="server"></asp:DropDownList>
+                </td>
+                <td>
+                    <asp:TextBox ID="Quantity2" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="Quantity2" ErrorMessage="Je třeba vyplnit" ForeColor="#FF0066"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <asp:DropDownList ID="ProductsDropDownList3" runat="server"></asp:DropDownList>
+                </td>
+                <td>
+                    <asp:TextBox ID="Quantity3" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="Quantity3" ErrorMessage="Je třeba vyplnit" ForeColor="#FF0066"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+
+
+        </table>
         <br />
     </div>
+
+
+
+    <asp:Button ID="Back" runat="server" OnClick="Back_Click" Text="Zpět" />
+    <asp:Button ID="AddOrder" runat="server" OnClick="AddOrder_Click" Text="Vytvořit" />
 </asp:Content>
 

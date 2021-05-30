@@ -50,6 +50,8 @@
                     </ItemTemplate>
                 </asp:TemplateField>
 
+                <%--#todo insert product name dont know how to bidn complex object--%>
+
                 <asp:TemplateField HeaderText="Množství">
                     <ItemTemplate>
                         <asp:Label ID="Quantity" runat="server" Text='<%# Bind("Quantity") %>'></asp:Label>

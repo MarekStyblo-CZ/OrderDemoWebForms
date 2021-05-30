@@ -38,12 +38,14 @@ namespace OrderDemoWebForms.Pages.Order
 
         protected void OrdersGridView_RowUpdating(Object sender, GridViewUpdateEventArgs e)
         {
+            throw new NotImplementedException();
             //var product = ((List<Model.DbSets.Product>)ProductsGrid.DataSource)[e.RowIndex];
             //Response.Redirect($"ProductUpdate.aspx?Id={product.Id}");
         }
 
         protected void OrdersGridView_RowEditing(Object sender, GridViewEditEventArgs e)
         {
+            throw new NotImplementedException();
             //var product = ((List<Model.DbSets.Product>)ProductsGrid.DataSource)[e.NewEditIndex];
             //Response.Redirect($"ProductUpdate.aspx?Id={product.Id}");
         }
@@ -53,6 +55,11 @@ namespace OrderDemoWebForms.Pages.Order
         {
             OrdersGrid.DataSource = _orderService.GetOrdersWithCalculatedPrice();
             OrdersGrid.DataBind();
+        }
+
+        protected void CreateOrderBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"OrderCreate.aspx");
         }
     }
 }
