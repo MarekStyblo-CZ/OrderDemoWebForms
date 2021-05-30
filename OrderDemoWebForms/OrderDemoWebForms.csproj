@@ -113,6 +113,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\Order\OrderCreate.aspx" />
+    <Content Include="Pages\Order\OrderDetail.aspx" />
     <Content Include="Pages\Product\ProductUpdate.aspx" />
     <Content Include="Pages\Product\Products.aspx" />
     <Content Include="Pages\Order\Orders.aspx" />
@@ -187,6 +189,20 @@
     <Compile Include="Model\DbSets\OrderItem.cs" />
     <Compile Include="Model\DbSets\Product.cs" />
     <Compile Include="Model\ViewModels\OrdersOverviewVM.cs" />
+    <Compile Include="Pages\Order\OrderCreate.aspx.cs">
+      <DependentUpon>OrderCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Order\OrderCreate.aspx.designer.cs">
+      <DependentUpon>OrderCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Order\OrderDetail.aspx.cs">
+      <DependentUpon>OrderDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Order\OrderDetail.aspx.designer.cs">
+      <DependentUpon>OrderDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Product\ProductUpdate.aspx.cs">
       <DependentUpon>ProductUpdate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
