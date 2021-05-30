@@ -17,6 +17,11 @@ namespace OrderDemoWebForms.Services
             return _orderRepository.Get(id);
         }
 
+        public Order GetWithOrderItems(int id)
+        {
+            return _orderRepository.GetWithOrderItem(id);
+        }
+
         public List<Order> GetAll()
         {
             return _orderRepository.GetAll();

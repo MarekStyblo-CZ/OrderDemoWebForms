@@ -23,6 +23,12 @@ namespace OrderDemoWebForms.Pages.Order
             BindData();
         }
 
+        protected void OrdersGridView_SelectedIndexChanging(Object sender, GridViewSelectEventArgs e)
+        {
+            var orderVM = ((List<OrdersOverviewVM>)OrdersGrid.DataSource)[e.NewSelectedIndex];
+            Response.Redirect($"OrderDetail.aspx?Id={orderVM.Id}");
+        }
+
 
         protected void OrdersGridView_RowDeleting(Object sender, GridViewDeleteEventArgs e)
         {
