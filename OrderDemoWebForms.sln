@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderDemoWebForms", "OrderDemoWebForms\OrderDemoWebForms.csproj", "{6D56A675-FB13-475D-A6B4-CAF4F8B62A02}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4A1A2940-C453-47A0-B7EE-3EEAFC93C303}"
+	ProjectSection(SolutionItems) = preProject
+		OrderDemoWebForms\ReadMe.txt = OrderDemoWebForms\ReadMe.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
