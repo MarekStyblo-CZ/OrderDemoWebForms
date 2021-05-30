@@ -14,6 +14,7 @@
             OnRowUpdating="OrdersGridView_RowUpdating"
             OnRowEditing="OrdersGridView_RowEditing">
             <Columns>
+
                 <asp:TemplateField HeaderText="Id">
                     <ItemTemplate>
                         <asp:Label ID="Id" runat="server" Text='<%# Bind("Id") %>'></asp:Label>
@@ -43,6 +44,7 @@
                         <asp:Label ID="Created" runat="server" Text='<%# Bind("Created") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
+
             </Columns>
 
         </asp:GridView>

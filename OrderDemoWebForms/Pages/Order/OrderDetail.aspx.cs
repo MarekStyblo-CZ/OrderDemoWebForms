@@ -32,6 +32,9 @@ namespace OrderDemoWebForms.Pages.Order
                 txtCustomerName.Text = order.CustomerName;
                 txtCustomerAddress.Text = order.CustomerAddress;
                 txtPrice.Text = order.OrderItems.Sum(oi => oi.Quantity * oi.Price).ToString();
+
+                OrderItemsGrid.DataSource = order.OrderItems;
+                OrderItemsGrid.DataBind();
             }
         }
 

@@ -25,7 +25,8 @@
             context.Orders.AddOrUpdate(new Order { Id = 2, CustomerName = "Jan Novák", CustomerAddress = "Testovací 11, Zadov", Created = new DateTime(2020, 05, 21) });
 
             context.OrderItems.AddOrUpdate(new OrderItem { Id = 1, OrderId = 1, ProductId = 1, Price = 7600.5f, Quantity = 1 });
-            context.OrderItems.AddOrUpdate(new OrderItem { Id = 2, OrderId = 2, ProductId = 2, Price = 9800.6f, Quantity = 1 });
+            context.OrderItems.AddOrUpdate(new OrderItem { Id = 2, OrderId = 2, ProductId = 2, Price = 200f, Quantity = 1 });
+            context.OrderItems.AddOrUpdate(new OrderItem { Id = 3, OrderId = 2, ProductId = 1, Price = 300f, Quantity = 1 });
 
             context.SaveChanges();
         }

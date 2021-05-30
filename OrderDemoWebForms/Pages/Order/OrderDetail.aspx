@@ -7,7 +7,7 @@
         <h2><%: Title %></h2>
 
         <hr />
-        <h3>Detail objednávky</h3>
+        <h3>Zákaznické údaje</h3>
         <table class="nav-justified">
             <tr>
                 <td>Id objednávky</td>
@@ -28,16 +28,48 @@
                 </td>
             </tr>
             <tr>
-                <td>Cena</td>
+                <td>Celková cena</td>
                 <td>
                     <asp:TextBox ID="txtPrice" runat="server" ReadOnly="true" disabled="disabled" />
                 </td>
             </tr>
         </table>
         <br />
-        <asp:Button ID="Back" runat="server" OnClick="Back_Click" Text="Zpět" />
-        <%--<asp:Button ID="UpdateProducId" runat="server" OnClick="UpdateProduct_Click" Text="Aktualizovat" />--%>
-        <br />
+
     </div>
+
+
+    <div>
+        <hr />
+        <h3>Přehled položek</h3>
+        <asp:GridView ID="OrderItemsGrid" runat="server" AutoGenerateColumns="False" Width="458px">
+            <Columns>
+                <asp:TemplateField HeaderText="Id">
+                    <ItemTemplate>
+                        <asp:Label ID="Id" runat="server" Text='<%# Bind("Id") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+                <asp:TemplateField HeaderText="Množství">
+                    <ItemTemplate>
+                        <asp:Label ID="Quantity" runat="server" Text='<%# Bind("Quantity") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+                <asp:TemplateField HeaderText="Cena">
+                    <ItemTemplate>
+                        <asp:Label ID="Price" runat="server" Text='<%# Bind("Price") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+            </Columns>
+
+        </asp:GridView>
+
+        <hr />
+    </div>
+
+    <asp:Button ID="Back" runat="server" OnClick="Back_Click" Text="Zpět" />
+    <%--<asp:Button ID="UpdateProducId" runat="server" OnClick="UpdateProduct_Click" Text="Aktualizovat" />--%>
 </asp:Content>
 
